@@ -1,46 +1,30 @@
-export default Hamburger;
-import Product from './Product.js';
+import {Product} from './Product.js';
 /**
 * Класс, объекты которого описывают параметры гамбургера. 
 * 
 * @constructor
-* @param size        Размер
+* @param burger      Вид бургера
 * @param stuffing    Начинка
 */
-class Hamburger extends Product(size, stuffing) {
-    super(price, kkal) {
-        price = this.price;
-        kkal = this.kkal;
+export class Hamburger extends Product {
+    static SIZE_SMALL = { tugric: 50, cal: 20, size: 'small' };
+    static SIZE_LARGE = { tugric: 100, cal: 40, size: 'large' };
+
+    static STUFFING_CHEESE = { tugric: 10, cal: 20 };
+    static STUFFING_SALAD = { tugric: 20, cal: 5 };
+    static STUFFING_POTATO = { tugric: 15, cal: 10 };
+    
+    constructor(burger, stuffing){
+        totalPrice = burger.tugric + stuffing.tugric;
+        totalCalories = burger.cal + stuffing.cal;
+        super (burger.size, stuffing.name, totalPrice, totalCalories);
     }
-    size = this.size;
-    stuffing = this.stuffing;
 }
-
-/* Размеры, виды начинок и добавок */
-Hamburger.SIZE_SMALL = ...
-Hamburger.SIZE_LARGE = ...
-Hamburger.STUFFING_CHEESE = ...
-Hamburger.STUFFING_SALAD = ...
-Hamburger.STUFFING_POTATO = ...
-
-/**
- * Узнать размер гамбургера
- */
-Hamburger.prototype.getSize = function () ...
-
-/**
- * Узнать начинку гамбургера
- */
-Hamburger.prototype.getStuffing = function () ...
-
-/**
- * Узнать цену гамбургера
- * @return {Number} Цена в тугриках
- */
-Hamburger.prototype.calculatePrice = function () ...
-
-/**
- * Узнать калорийность
- * @return {Number} Калорийность в калориях
- */
-Hamburger.prototype.calculateCalories = function () ...
+   
+    
+    
+    
+    
+    
+    
+    

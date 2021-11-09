@@ -1,13 +1,21 @@
-export default Salad;
-import Product from './Product.js'
+import { Product } from './Product.js';
 /**
  * класс Салат
+ * @param
+ * @weight вес салата
+ * @type вид салата
  */
 
-class Salad extends Product {
-    super(price, kkal) {
-        price = this.price;
-        kkal = this.kkal;
+export class Salad extends Product {
+    static CAESAR = { tugric: 100, cal: 20, name: "caesar" };
+    static OLIVIER = { tugric: 50, cal: 80, name: "olivier" };
+
+    constructor(weight, type) {
+        const perWeight = 100;
+        let totalPrice = (type.size * weight) / perWeight;
+        let totalCal = (type.cal * weight) / perWeight;
+        super(weight, type.name, totalPrice, totalCal);
+
     }
 }
 

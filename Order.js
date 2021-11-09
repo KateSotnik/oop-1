@@ -1,14 +1,50 @@
-export default Order;
+
 /**
  * Класс, описывающий заказ
  * 
  * @item единица товара
  * @totalPrice конечная цена
- * @totalKkal количество калорий всего
+ * @totalCal количество калорий всего
  */
 
-class Order {
-    constructor(){
+export class Order {
+    constructor(productsList, paid) {
+        this.productsList = [];
+        this.paid = false;
+    }
+    addItem(item) {
+        if (this.paid) {
+            return "Sorry, you can't change this order";
+        }
+        this.productsList.push(item);
+    }
+    removeItem(item) {
+        if (this.paid) {
+            return "Sorry, you can't change this order";
+        }
 
+        for (let i = 0; i < this.productsList.length; i++) {
+            if (this.productsList[i] === item) {
+                this.productsList.splice(this.productsList.indexOf(item), 1);
+            }
+            else {
+                return "Error";
+            }
+
+        }
+    }
+    getTotalPrice() {
+        let totalPrice = 0;
+        this.productsList.forEach(product => {
+            totalPrice += product.price;
+        });
+    }
+    getTotalCalories() {
+        let totalCalories =0;
+        this.productsList.forEach(product =>{
+            totalCalories += product.cal;
+        })
     }
 }
+
+

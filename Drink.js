@@ -1,12 +1,15 @@
-export default Drink;
-import Product from './Product.js';
+import { Product } from './Product.js';
 /**
  * класс Напиток
  */
 
-class Drink extends Product {
-    super(price, kkal) {
-        price = this.price;
-        kkal = this.kkal;
-    }
+export class Drink extends Product {
+static COLA = { tugric: 50, cal: 40, name: 'cola'};
+static COFFEE = { tugric: 80, cal: 20, name: 'coffee'};
+
+constructor(drink_type){
+    super (null, drink_type.name, drink_type.tugric, drink_type.cal);
 }
+}
+const drinkCola = new Drink(Drink.COLA);
+console.log(drinkCola);
