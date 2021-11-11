@@ -21,8 +21,7 @@ console.log(order);
 
 order.removeItem(saladOlivier);
 console.log(order);
-console.log(order.removeItem(saladOlivier)); //'Sorry, you can't change this order'
-
+console.log(order.removeItem(saladOlivier)); //Sorry, this order does not contain such item
 
 
 order.orderPaid();
