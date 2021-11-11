@@ -1,4 +1,3 @@
-
 /**
  * Класс, описывающий заказ
  * 
@@ -6,12 +5,12 @@
  * @totalPrice конечная цена
  * @totalCal количество калорий всего
  */
-
 export class Order {
     constructor(productsList, paid) {
         this.productsList = [];
         this.paid = false;
     }
+
     addItem(item) {
         if (this.paid) {
             return "Sorry, you can't change this order";
@@ -29,7 +28,7 @@ export class Order {
             return "Sorry, this order does not contain such item";
         }
     }
-    
+
     getTotalPrice() {
         let totalPrice = 0;
         this.productsList.forEach(product => {
@@ -37,6 +36,7 @@ export class Order {
         })
         return totalPrice;
     }
+
     getTotalCalories() {
         let totalCalories = 0;
         this.productsList.forEach(product => {
@@ -44,6 +44,7 @@ export class Order {
         })
         return totalCalories;
     }
+    
     orderPaid() {
         this.paid = true;
     }

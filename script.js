@@ -3,14 +3,11 @@ import { Drink }  from "./Drink.js";
 import { Hamburger } from "./Hamburger.js";
 import { Salad } from "./Salad.js";
 
-
-
 const drinkCola = new Drink(Drink.COLA);
 
 const hamSmall = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
 
 const saladOlivier = new Salad(250, Salad.OLIVIER);
-// console.log(saladOlivier);
 
 const order = new Order();
 
