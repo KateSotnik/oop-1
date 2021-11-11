@@ -18,16 +18,18 @@ export class Order {
         }
         this.productsList.push(item);
     }
+
     removeItem(item) {
         if (this.paid) {
             return "Sorry, you can't change this order";
         }
-        for (let i = 0; i < this.productsList.length; i++) {
-            if (this.productsList[i] === item) {
-                this.productsList.splice(this.productsList.indexOf(item), 1);
-            }
+        if (this.productsList.includes(item)) {
+            this.productsList = this.productsList.filter(prod => prod !== item);
+        } else {
+            return "Sorry, this order does not contain such item";
         }
     }
+    
     getTotalPrice() {
         let totalPrice = 0;
         this.productsList.forEach(product => {
