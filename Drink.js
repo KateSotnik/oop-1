@@ -11,5 +11,3 @@ constructor(drink_type){
     super (null, drink_type.name, drink_type.tugric, drink_type.cal);
 }
 }
-const drinkCola = new Drink(Drink.COLA);
-console.log(drinkCola);

@@ -22,28 +22,28 @@ export class Order {
         if (this.paid) {
             return "Sorry, you can't change this order";
         }
-
         for (let i = 0; i < this.productsList.length; i++) {
             if (this.productsList[i] === item) {
                 this.productsList.splice(this.productsList.indexOf(item), 1);
             }
-            else {
-                return "Error";
-            }
-
         }
     }
     getTotalPrice() {
         let totalPrice = 0;
         this.productsList.forEach(product => {
             totalPrice += product.price;
-        });
+        })
+        return totalPrice;
     }
     getTotalCalories() {
-        let totalCalories =0;
-        this.productsList.forEach(product =>{
+        let totalCalories = 0;
+        this.productsList.forEach(product => {
             totalCalories += product.cal;
         })
+        return totalCalories;
+    }
+    orderPaid() {
+        this.paid = true;
     }
 }
 
