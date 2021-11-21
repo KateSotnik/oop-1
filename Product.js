@@ -2,33 +2,27 @@
    * Исходный класс для всех объектов
    * 
    * @constructor
-   * @param size Размер, вес продукта
    * @param type Название продукта
    * @param price  Цена
    * @param cal    Калорийность
    * 
    */
+  
 export class Product {
-    constructor(size, product_name, price, cal) {
-        this.size = size;
-        this.type = product_name;
+    constructor(productName, price, cal) {
+        this.type = productName;
         this.price = price;
         this.cal = cal;
     }
-
-    getSize() {
-        return this.size;
-    }
-
     getType() {
         return this.type;
     }
 
-    calculatePrice() {
+    getPrice() {
         return this.price;
     }
 
-    calculateCalories() {
+    getCalories() {
         return this.cal;
     }
 }

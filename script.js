@@ -6,8 +6,11 @@ import { Salad } from "./Salad.js";
 const drinkCola = new Drink(Drink.COLA);
 
 const hamSmall = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
+const hamBig = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_POTATO);
+console.log(hamBig);
 
-const saladOlivier = new Salad(250, Salad.OLIVIER);
+const saladOlivier = new Salad(250, Salad.OLIVIER, 100);
+console.log(saladOlivier);
 
 const order = new Order();
 
@@ -18,14 +21,10 @@ console.log(order);
 
 order.removeItem(saladOlivier);
 console.log(order);
-console.log(order.removeItem(saladOlivier)); //Sorry, this order does not contain such item
+order.removeItem(hamBig); //Sorry, this order does not contain such item
 
-
-order.orderPaid();
-console.log(order.addItem(drinkCola)); //'Sorry, you can't change this order'
+order.markOrderAsPaid();
+order.addItem(drinkCola); //'Sorry, you can't change this order'
 
 console.log(order.getTotalPrice());
 console.log(order.getTotalCalories());
-
-
-

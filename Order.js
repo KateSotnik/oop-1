@@ -5,27 +5,30 @@
  * @totalPrice конечная цена
  * @totalCal количество калорий всего
  */
+
 export class Order {
-    constructor(productsList, paid) {
+    constructor() {
         this.productsList = [];
-        this.paid = false;
     }
 
     addItem(item) {
         if (this.paid) {
-            return "Sorry, you can't change this order";
+            console.log("Sorry, you can't change this order");
+            return;
         }
         this.productsList.push(item);
     }
 
     removeItem(item) {
         if (this.paid) {
-            return "Sorry, you can't change this order";
+            console.log("Sorry, you can't change this order");
+            return;
         }
         if (this.productsList.includes(item)) {
             this.productsList = this.productsList.filter(prod => prod !== item);
         } else {
-            return "Sorry, this order does not contain such item";
+            console.log("Sorry, this order does not contain such item");
+            return;
         }
     }
 
@@ -44,10 +47,8 @@ export class Order {
         })
         return totalCalories;
     }
-    
-    orderPaid() {
+
+    markOrderAsPaid() {
         this.paid = true;
     }
 }
-
-
