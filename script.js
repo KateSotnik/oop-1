@@ -7,10 +7,11 @@ const drinkCola = new Drink(Drink.COLA);
 
 const hamSmall = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
 const hamBig = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_POTATO);
-console.log(hamBig);
+console.log(hamBig.getSize());
 
-const saladOlivier = new Salad(250, Salad.OLIVIER, 100);
+const saladOlivier = new Salad(250, Salad.OLIVIER);
 console.log(saladOlivier);
+console.log(saladOlivier.getWeight());
 
 const order = new Order();
 

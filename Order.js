@@ -9,6 +9,7 @@
 export class Order {
     constructor() {
         this.productsList = [];
+        this.paid = false;
     }
 
     addItem(item) {
@@ -28,7 +29,6 @@ export class Order {
             this.productsList = this.productsList.filter(prod => prod !== item);
         } else {
             console.log("Sorry, this order does not contain such item");
-            return;
         }
     }
 

@@ -15,10 +15,14 @@ export class Hamburger extends Product {
     static STUFFING_SALAD = { tugric: 20, cal: 5, name: 'stuffing_salad' };
     static STUFFING_POTATO = { tugric: 15, cal: 10, name: 'stuffing_potato' };
     
-    constructor(burger, stuffing, size) {
+    constructor(burger, stuffing) {
         let totalPrice = burger.tugric + stuffing.tugric;
         let totalCalories = burger.cal + stuffing.cal;
-        super(stuffing.name, totalPrice, totalCalories, size);
-        this.size = burger.size;
+        super(stuffing.name, totalPrice, totalCalories);
+        this.size =  burger.size;
+        
+    }
+    getSize() {
+        return this.size;
     }
 }
