@@ -17,6 +17,7 @@ export class Salad extends Product {
         super(type.name, totalPrice, totalCal);
         this.weight = weight;
     }
+    
     getWeight () {
         return this.weight;
     }

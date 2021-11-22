@@ -19,9 +19,9 @@ export class Hamburger extends Product {
         let totalPrice = burger.tugric + stuffing.tugric;
         let totalCalories = burger.cal + stuffing.cal;
         super(stuffing.name, totalPrice, totalCalories);
-        this.size =  burger.size;
-        
+        this.size =  burger.size;  
     }
+    
     getSize() {
         return this.size;
     }
